@@ -1,0 +1,30 @@
+/* font-family: 'Dancing Script', cursive;
+font-family: 'Raleway', sans-serif; */
+
+h1, .nav-link {
+    font-family: 'Dancing Script', cursive;
+    color: white;
+}
+
+h1{
+    padding: 1rem 0;
+    text-align: center;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar{
+    font-size: 1.3rem;
+}
+
+body, .navbar{
+    background-color: #75C2F6;
+}
+
+p{
+    margin: 0;
+}
+
+/* https://colorhunt.co/palette/1d5d9b75c2f6f4d160fbeeac */
