@@ -19,10 +19,10 @@ app.get("/", (req, res) => {
 
 app.post("/submit", (req, res) => {
 
-    tasks.push(req.body.task);
+    tasks.push(req.body.task); // Work on objects rather than an array.
 
     res.render("index.ejs", {
-        tasks: tasks
+        tasks: tasks,
     })
     console.log(tasks);
 });
