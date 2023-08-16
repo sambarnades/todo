@@ -1,23 +1,47 @@
 <%- include("partials/nav.ejs") %>
 <%- include("partials/header.ejs") %>
 
-        <div class="row to-do-area">
-            <div class="col">
+<div class="row to-do-area">
+  <div class="col">
 
-                <form method="post" class="input-group mb-3">
-                    <input type="text" class="form-control" name="task" id="task" placeholder="Type your new task" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-light" type="submit" id="button-addon2">+</button>
-                  </form>
+    <form action ="/submit" method="post" class="input-group mb-3">
+      <input type="text" class="form-control" name="task" id="task" placeholder="Type your new task"
+        aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button class="btn btn-outline-light" type="submit" id="button-addon2">+</button>
+    </form>
 
-                  <!-- <div class="input-group mb-3">
-                    <div class="input-group-text">
-                      <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
-                  </div> -->
+    <% if(locals.tasks) { 
 
-            </div>
-        </div>
+      for(let i = 0; i < locals.tasks.length; i++){ %>
+
+    <div class="input-group mb-3">
+      <div class="input-group-text">
+        <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+      </div>
+      <input type="text" class="form-control" aria-label="Text input with checkbox" value="<%= locals.tasks[i] %>"
+        readonly>
     </div>
-    
+
+        <% }
+    }
+
+      else{
+
+        } %>
+
+    <form action="/reset" method="post" class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button class="btn btn-danger btn-reset">Reset List</button>
+    </form>
+
+    <!-- <div class="input-group mb-3">
+          <div class="input-group-text">
+            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+          </div>
+          <input type="text" class="form-control"  aria-label="Text input with checkbox" readonly>
+        </div> -->
+
+  </div>
+</div>
+</div>
+
 <%- include("partials/footer.ejs") %>

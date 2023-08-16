@@ -11,17 +11,27 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + "/node_modules/bootstrap/dist"));
 app.use(express.static(__dirname + "/node_modules/jquery/dist"));
 
+let tasks = [];
+
 app.get("/", (req, res) => {
     res.render("index.ejs")
 });
 
-app.post("/", (req, res) => {
-    let task = req.body.task;
+app.post("/submit", (req, res) => {
+
+    tasks.push(req.body.task);
+
     res.render("index.ejs", {
-        task: task
+        tasks: tasks
     })
-    console.log(task); // Doesn't function.
+    console.log(tasks);
 });
+
+app.post("/reset", (req, res) => {
+    tasks = [];
+    res.render("index.ejs");
+})
+
 app.listen(port, () => {
     console.log("App listening on port " + port);
 });
