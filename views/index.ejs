@@ -5,7 +5,7 @@
   <div class="col">
 
     <form action ="/submit" method="post" class="input-group mb-3">
-      <input type="text" class="form-control" name="task" id="task" placeholder="Type your new task"
+      <input type="text" class="form-control" name="title" id="title" placeholder="Type your new task"
         aria-label="Recipient's username" aria-describedby="button-addon2">
       <button class="btn btn-outline-light" type="submit" id="button-addon2">+</button>
     </form>
@@ -18,7 +18,7 @@
       <div class="input-group-text">
         <input id="checkbox-<%= [i] %>" class="form-check-input mt-0 checkbox" type="checkbox" value="" aria-label="Checkbox for following text input">
       </div>
-      <input type="text" class="form-control task-text" aria-label="Text input with checkbox" value="<%= locals.tasks[i] %>"
+      <input type="text" class="form-control task-text" aria-label="Text input with checkbox" value="<%= locals.tasks[i].title %>"
         readonly>
     </div>
 

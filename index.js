@@ -19,12 +19,26 @@ app.get("/", (req, res) => {
 
 app.post("/submit", (req, res) => {
 
-    tasks.push(req.body.task); // Work on objects rather than an array.
+    class task {
+        constructor() {
+            this.title = req.body.title,
+            this.toDo = Date.now(),
+            this.done = false
+         }
+    } 
+    
+
+    let newTask = new task()
+
+    tasks.push(newTask)
 
     res.render("index.ejs", {
         tasks: tasks,
     })
     console.log(tasks);
+
+
+
 });
 
 app.post("/reset", (req, res) => {
