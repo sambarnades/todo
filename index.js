@@ -23,25 +23,25 @@ app.get("/", (req, res) => {
 
 app.post("/submit", (req, res) => {
 
-    if (tasks != null) {                                    // Doesn't function from this part...
-        for (let i = 0; i < tasks.length; i++) {
+    // if (tasks != null) {                                    // Doesn't function from this part...
+    //     for (let i = 0; i < tasks.length; i++) {
 
-            let checkbox = "checkbox-" + i + "-done";
+    //         let checkbox = "checkbox-" + i + "-done";
 
-            if (req.body.checkbox) {
-                tasks[i].done = false;
-                console.log(tasks[i].title + " : " + tasks[i].done) 
-            } else {
-                tasks[i].done = true;
-                console.log(tasks[i].title + " : " + tasks[i].done)
-            }
-        }
-    }                                                       // To this part.
+    //         if (req.body.checkbox) {
+    //             tasks[i].done = false;
+    //             console.log(tasks[i].title + " : " + tasks[i].done) 
+    //         } else {
+    //             tasks[i].done = true;
+    //             console.log(tasks[i].title + " : " + tasks[i].done)
+    //         }
+    //     }
+    // }                                                       // To this part.
 
     class task {
         constructor() {
             this.title = req.body.title,
-                this.toDo = Date.now(),
+                this.toDo = new Date(), // To work on it
                 this.done = false
         }
     }
@@ -49,6 +49,8 @@ app.post("/submit", (req, res) => {
     let newTask = new task()
 
     tasks.push(newTask)
+
+    console.log(tasks);
 
     res.render("index.ejs", {
         tasks: tasks,
