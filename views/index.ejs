@@ -6,9 +6,14 @@
 
     <form action ="/submit" method="post" class="input-group mb-3">
       <input type="text" class="form-control" name="title" id="title" placeholder="Type your new task"
-        aria-label="Recipient's username" aria-describedby="button-addon2">
-      <button class="btn btn-outline-light" type="submit" id="button-addon2">+</button>
+        aria-label="Task to do">
+        <input type="datetime-local" class="input-group-text" name="toDo" id="toDo" placeholder="Select your deadline"
+        aria-label="Deadline">
+
+      <button class="btn btn-outline-light" type="submit" id="basic-addon2">+</button>
     </form>
+
+    <% if (locals.sortedTasks)
 
     <% if(locals.tasks) { %>
 
@@ -19,6 +24,8 @@
         <input id="checkbox-<%= [i] %>" class="form-check-input mt-0 checkbox" type="checkbox" value="" aria-label="Checkbox for following text input">
       </div>
       <input type="text" class="form-control task-text" aria-label="Text input with checkbox" value="<%= locals.tasks[i].title %>"
+        readonly>
+      <input type="text" class="input-group-text task-toDo" aria-label="Date input with checkbox" value="<%= locals.tasks[i].toDo %>"
         readonly>
     </div>
 

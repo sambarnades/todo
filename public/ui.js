@@ -7,11 +7,11 @@ const taskDone = () => {
         let checkboxId = event.target.id;
         $("#" + checkboxId).closest(".input-group").toggleClass("done");
 
-        if ($("#" + checkboxId).attr("name") === undefined) {
-            $("#" + checkboxId).attr("name", checkboxId + "-done");
-        } else {
-            $("#" + checkboxId).removeAttr("name");
-        }
+        // if ($("#" + checkboxId).attr("name") === undefined) {
+        //     $("#" + checkboxId).attr("name", checkboxId + "-done");
+        // } else {
+        //     $("#" + checkboxId).removeAttr("name");
+        // }
 
     })
 
