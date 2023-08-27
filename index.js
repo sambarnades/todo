@@ -38,10 +38,13 @@ app.post("/submit", (req, res) => {
     //     }
     // }                                                       // To this part.
 
+    let UTCConversion = Date(Date.UTC(req.body.toDo)); //.replace("T", " ");
+    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
     class task {
         constructor() {
             this.title = req.body.title,
-                this.toDo = new Date(), // To work on it
+                this.toDo = UTCConversion,
                 this.done = false
         }
     }
