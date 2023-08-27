@@ -21,6 +21,48 @@ app.get("/", (req, res) => {
     })
 });
 
+app.get("/today", (req, res) => {
+
+let sortedTasks = []; // Create a blank array
+
+const todayLoop = () => { // Function to call the sort.
+    if(tasks){              // Check if array exists.
+        
+        tasks.forEach(taskToSort => { // Loop to check the dates.
+            
+            let deadline = taskToSort.toDo;         // Stock deadline & the date today 
+            let today = new Date().toDateString();
+
+            // console.log(deadline);
+            // console.log(today);
+
+            if(deadline == today){              // Check if the deadline is the same as the date today
+                sortedTasks.push(taskToSort); // If it is, push it to the sortedTasks array.
+            }
+
+            else{
+
+            }
+
+    });
+    sortedTasks.forEach(task => {
+        console.log(task);
+    });
+    }
+    
+    else{
+        console.log("No task array.")
+    }
+}
+
+todayLoop();
+
+    res.render("index.ejs", {
+        tasks: sortedTasks,
+        todayFirst: true
+    })
+});
+
 app.post("/submit", (req, res) => {
 
     // if (tasks != null) {                                    // Doesn't function from this part...
@@ -38,13 +80,13 @@ app.post("/submit", (req, res) => {
     //     }
     // }                                                       // To this part.
 
-    let UTCConversion = Date(Date.UTC(req.body.toDo)); //.replace("T", " ");
-    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    let toDo = new Date(req.body.toDo).toDateString();
+    console.log(toDo);
 
     class task {
         constructor() {
             this.title = req.body.title,
-                this.toDo = UTCConversion,
+                this.toDo = toDo,
                 this.done = false
         }
     }

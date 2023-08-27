@@ -13,6 +13,8 @@
       <button class="btn btn-outline-light" type="submit" id="basic-addon2">+</button>
     </form>
 
+    <% if (locals.sortedTasks)
+
     <% if(locals.tasks) { %>
 
       <% for(let i = 0; i < locals.tasks.length; i++){ %>
@@ -23,7 +25,7 @@
       </div>
       <input type="text" class="form-control task-text" aria-label="Text input with checkbox" value="<%= locals.tasks[i].title %>"
         readonly>
-      <input type="text" class="form-control task-toDo" aria-label="Date input with checkbox" value="<%= locals.tasks[i].toDo %>"
+      <input type="text" class="input-group-text task-toDo" aria-label="Date input with checkbox" value="<%= locals.tasks[i].toDo %>"
         readonly>
     </div>
 
