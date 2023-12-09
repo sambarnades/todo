@@ -1,0 +1,88 @@
+[33mcommit 50342d1055e512db9271dd1a2fb1afee4494793b[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m)[m
+Author: Sam B. <smauel.barnades@gmail.com>
+Date:   Sat Dec 9 19:09:22 2023 +0100
+
+    Revert "Minor bug fixing."
+    
+    This reverts commit aaefcf46ecab12c286c920871492fb3411f3f5b4.
+
+[33mcommit aaefcf46ecab12c286c920871492fb3411f3f5b4[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Sam Barnades <77226711+sambarnades@users.noreply.github.com>
+Date:   Sun Aug 27 18:57:18 2023 +0200
+
+    Minor bug fixing.
+
+[33mcommit c960f5d5b9b8e25991a907473bb44d92790a4803[m
+Merge: 1d7457d 5c12ce7
+Author: Sam <77226711+sambarnades@users.noreply.github.com>
+Date:   Sun Aug 27 18:49:09 2023 +0200
+
+    Merge pull request #1 from sambarnades/time
+    
+    Time
+
+[33mcommit 5c12ce75832de3181173441b26d66230301c7648[m
+Author: Sam Barnades <77226711+sambarnades@users.noreply.github.com>
+Date:   Sun Aug 27 18:44:24 2023 +0200
+
+    Time function finished.
+
+[33mcommit 428ef8f211d9b921a130bc21105b0b0954fd98e2[m
+Author: Sam Barnades <77226711+sambarnades@users.noreply.github.com>
+Date:   Sun Aug 27 16:35:08 2023 +0200
+
+    Add Time on tasks.
+
+[33mcommit 2f3915f75d9cbaacc113eb670c33da46a1937ef0[m
+Author: Sam Barnades <77226711+sambarnades@users.noreply.github.com>
+Date:   Sun Aug 27 15:23:38 2023 +0200
+
+    Remove Firebase.
+
+[33mcommit 2cccf3c8a73ee2029e71cccf9542bdbd7897dca7[m
+Author: Sam Barnades <77226711+sambarnades@users.noreply.github.com>
+Date:   Tue Aug 22 18:15:22 2023 +0200
+
+    Working on time functionality.
+
+[33mcommit 1d7457d0ecfec11a6277360422ec0e02a724fd1e[m
+Author: Sam <77226711+sambarnades@users.noreply.github.com>
+Date:   Tue Aug 22 08:42:51 2023 +0200
+
+    Create README.md
+
+[33mcommit f146d73f765d78187aa0204e1bca6720a3d20361[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: Sam Barnades <77226711+sambarnades@users.noreply.github.com>
+Date:   Tue Aug 22 08:41:08 2023 +0200
+
+    Trying to edit the tasks array to switch between a done an undone status for the tasks realized but it doen't function. It seems that the if statement doesn't march the checkbox name attribute.
+
+[33mcommit db8b39fd4a4121e23130dd1e9fb605c39d7205ba[m
+Author: Sam Barnades <77226711+sambarnades@users.noreply.github.com>
+Date:   Fri Aug 18 11:36:20 2023 +0200
+
+    Now, tasks are objects able to be done or undone.
+
+[33mcommit 6dbf926790cadaa5c0ec7b9b7aecb11db9c3a28a[m
+Author: Sam Barnades <77226711+sambarnades@users.noreply.github.com>
+Date:   Thu Aug 17 00:18:35 2023 +0200
+
+    Add functionalities but observing create objects rather than arrays.
+
+[33mcommit 26c6e565a47dc445ff4cb65d34508bc4381b8e73[m
+Author: Sam Barnades <77226711+sambarnades@users.noreply.github.com>
+Date:   Wed Aug 16 18:23:57 2023 +0200
+
+    Add some functionalities.
+
+[33mcommit c6de996794f3288a33a23fe2a62af99ad70095e5[m
+Author: Sam Barnades <77226711+sambarnades@users.noreply.github.com>
+Date:   Wed Aug 16 16:04:15 2023 +0200
+
+    Now, the task insertion function & return a correct console.log.
+
+[33mcommit 263e06a306824c6d54009f0dfda6a4e755bed498[m
+Author: Sam Barnades <77226711+sambarnades@users.noreply.github.com>
+Date:   Tue Aug 15 00:11:22 2023 +0200
+
+    initialization
