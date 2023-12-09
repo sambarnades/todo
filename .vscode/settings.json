@@ -1,0 +1,11 @@
+{
+    "pgsql.connections": [
+
+        {
+            "server": "localhost",
+            "database": "tasks",
+            "user": "postgres",
+            "password": "postgres"
+        }
+    ]
+}
