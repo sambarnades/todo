@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sambarnades/to-do-list-project.git"
@@ -22,10 +23,6 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "jquery": "^3.7.0",
-    "mongodb": "^6.1.0",
     "pg": "^8.11.3"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
   }
 }
