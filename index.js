@@ -23,64 +23,40 @@ app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist"));
 app.use(express.static("node_modules/jquery/dist"));
 
-let getTasks = await client.query('SELECT * FROM tasks');
-let tasks = getTasks.rows;
+app.get("/", async (req, res) => {
 
-console.log(tasks);
+    const getTasks = await client.query('SELECT * FROM tasks');
+    const tasks = getTasks.rows;
 
-
-app.get("/", (req, res) => {
+    // console.log(tasks);
 
     res.render("index.ejs", {
-        tasks: tasks,
+        tasks: tasks
     })
 });
 
-app.get("/today", (req, res) => {
+app.get("/today", async (req, res) => {
 
-    let sortedTasks = []; // Create a blank array
+    const today = new Date().toJSON().slice(0,10);              // Get the today in database
+    const queryArray = [today];                                 // Put it in array
 
-    const todayLoop = () => { // Function to call the sort.
-        if (tasks) {              // Check if array exists.
+    // console.log(today);                                          CONTROL
 
-            tasks.forEach(taskToSort => { // Loop to check the dates.
+    const getTasks = await client.query('SELECT * FROM tasks WHERE to_do_date = ($1);', queryArray);    // Query
+    const sortedTasks = getTasks.rows;
 
-                let deadline = taskToSort.toDo;         // Stock deadline & the date today 
-                let today = new Date().toDateString();
-
-                // console.log(deadline);
-                // console.log(today);
-
-                if (deadline == today) {              // Check if the deadline is the same as the date today
-                    sortedTasks.push(taskToSort); // If it is, push it to the sortedTasks array.
-                }
-
-                else {
-
-                }
-
-            });
-            sortedTasks.forEach(task => {
-                console.log(task);
-            });
-        }
-
-        else {
-            console.log("No task array.")
-        }
-    }
-
-    todayLoop();
-
-    res.render("index.ejs", {
-        tasks: sortedTasks,
-        todayFirst: true
+    res.render("index.ejs", {                                                                           // Rending
+        tasks: sortedTasks
     })
+
 });
 
 app.post("/submit", async (req, res) => {
 
-    let toDo = new Date(req.body.toDo).toDateString();
+    let toDo = new Date(req.body.toDo);
+
+    console.log(toDo);
+
 
     const newTask = [
         req.body.title,
@@ -94,9 +70,10 @@ app.post("/submit", async (req, res) => {
 
 });
 
-app.post("/reset", (req, res) => {
-    tasks = [];
-    res.render("index.ejs");
+app.post("/reset", async (req, res) => {
+    const query = await client.query('DELETE FROM tasks');
+    console.log(query);
+    res.redirect("/");
 })
 
 app.listen(port, () => {
